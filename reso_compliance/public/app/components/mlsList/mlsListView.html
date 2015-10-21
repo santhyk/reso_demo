@@ -1,0 +1,96 @@
+<section id="main" class="column">
+    <header>
+        <h3 class="tabs_involved">MLS List</h3>
+    </header>
+    <form class="search">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchMls">
+        </div>      
+    </form> 
+        <div>
+            <div class="tab_container">
+                <article class="module">
+                    <div id="tab1" class="tab_content" style="overflow: auto;width:100%">
+                        <table class="tablesorter" cellspacing="0" style="font-size: 100%;text-align:left"> 
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'id'; reverse = !reverse">Id
+                                        <span ng-show="predicate == 'id' && reverse" class="fa fa-caret-down"></span>
+                                        <span ng-show="predicate == 'id' && !reverse" class="fa fa-caret-up"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'name'; reverse = !reverse">MLS_Name
+                                        <span ng-show="predicate == 'name' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'name' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'website'; reverse = !reverse">Website
+                                        <span ng-show="predicate == 'website' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'website' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'email'; reverse = !reverse">Email
+                                        <span ng-show="predicate == 'email' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'email' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'phone'; reverse = !reverse">Contact
+                                        <span ng-show="predicate == 'phone' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'phone' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'sai_link'; reverse = !reverse">SAI_Link
+                                        <span ng-show="predicate == 'sai_link' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'sai_link' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'street'; reverse = !reverse">Street
+                                        <span ng-show="predicate == 'street' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'street' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'city'; reverse = !reverse">City
+                                        <span ng-show="predicate == 'city' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'city' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'state'; reverse = !reverse">State
+                                        <span ng-show="predicate == 'state' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'state' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'zipcode'; reverse = !reverse">Zip
+                                        <span ng-show="predicate == 'zipcode' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'zipcode' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>&nbsp;&nbsp;Actions&nbsp;&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in mlsdetails | orderBy:predicate:reverse | filter:searchMls">
+                                    <td>{{data.id}}</td>
+                                    <td>{{data.name}}</td>
+                                    <td>{{data.website}}</td>
+                                    <td>{{data.email}}</td>
+                                    <td>{{data.phone}}</td>
+                                    <td>{{data.sai_link}}</td>
+                                    <td>{{data.street}}</td>
+                                    <td>{{data.city}}</td>
+                                    <td>{{data.state}}</td>
+                                    <td>{{data.zipcode}}</td>
+                                    <td>
+                                        <input ng-click="edit(data.id)"type="image" src="general/images/icn_edit.png" title="Edit">
+                                        <input ng-click="delete(data.id)"type="image" src="general/images/icn_trash.png" title="Trash">
+                                    </td>    
+                                </tr> 
+                            </tbody>
+                        </table>
+                    </div>
+                </article> <!-- end of content manager article-->     
+             </div>
+        </div>    
+    <div class="clear"></div>
+</section>
+<div style="clear:both;"></div>       

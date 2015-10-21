@@ -1,0 +1,21 @@
+<div class="login_dv">
+    <div ng-show="errorMsg.length" class="alert alert-danger">{{errorMsg}}</div>
+    <div class="login_inner_dv">
+        <div class="login_txt">Login</div>
+        <form name="form" ng-submit="loginSubmit(user)">
+            <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" ng-model="user.userEmail" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" ng-model="user.password" placeholder="Password" required>
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+<div style="clear:both;"></div>

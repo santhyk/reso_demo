@@ -1,0 +1,64 @@
+<section id="main" class="column">
+    <div class="container">
+        <br><br>
+        <button type="button" class="btn btn-info btn-full" data-toggle="collapse" data-target="#demo" style="text-align:center;">Direct From Server</button>
+        <div id="demo" class="collapse">
+            <div class="form_dv">
+                <form role="form" ng-submit="submit()">
+                    <div class="form-group">
+                        <label for="mls-name">MLS Name:</label>
+                        <input type="text" ng-model="user.serverName" class="form-control" id="mlsname">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-url">Login URL*:</label>
+                        <input type="text" ng-model="user.serverUrl" class="form-control" id="loginurl" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username*:</label>
+                        <input type="text" ng-model="user.userName" class="form-control" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Password*:</label>
+                        <input type="password" ng-model="user.password" class="form-control" id="pwd" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">User Agent*:</label>
+                        <input type="text" ng-model="user.userAgent" class="form-control" id="useragent">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">User Agent Password*:</label>
+                        <input type="password" ng-model="user.userAgentPassword" class="form-control" id="useragentpassword">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">RetsVersion*:</label>
+                        <input type="text" ng-model="user.retsversion" class="form-control" id="retsversion" required>
+                    </div>  
+                    <div class="form-group">
+                        <label for="phone">Resource*:</label>
+                        <input type="text" ng-model="user.resource" class="form-control" id="resource" required>
+                    </div>  
+                    <div class="form-group">
+                        <label for="phone">Class*:</label>
+                        <input type="text" ng-model="user.class" class="form-control" id="class" required>
+                    </div>
+                    <button data-toggle="collapse" data-target="#demo" type="submit" class="btn btn-primary" ng-submit="submit()">Submit</button>
+                </form>
+            </div>
+        </div>            
+        <br><br>
+        <button type="button" class="btn btn-info btn-full" data-toggle="collapse" data-target="#demo2" style="text-align:center;">Metadata File Upload</button>
+        <div id="demo2" class="collapse">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>           
+        <br><br>
+        <button type="button" class="btn btn-info btn-full" data-toggle="collapse" data-target="#demo3" style="text-align:center;">Bulk Upload</button>
+        <div id="demo3" class="collapse">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+    </div>
+</section>
+<div style="clear:both;"></div>

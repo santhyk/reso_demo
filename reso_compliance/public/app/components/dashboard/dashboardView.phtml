@@ -1,0 +1,87 @@
+<section id="main" class="column">
+    <header>
+        <h3 class="tabs_involved">Test List</h3>
+    </header>
+    <form class="search">
+        <div class="input-group">
+            <div class="input-group-addon"><i class="fa fa-search"></i></div>
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchMls">
+        </div>  
+    </form>
+        <div>
+            <div class="tab_container">
+                <article class="module">
+                    <div id="tab1" class="tab_content" style="overflow: auto;width:100%;">
+                        <table class="tablesorter" cellspacing="0" style="font-size: 100%;text-align: left"> 
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'application_uid'; reverse = !reverse">Application UID
+                                        <span ng-show="predicate == 'application_uid' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'application_uid' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'tbl_mls_id'; reverse = !reverse">MLS ID
+                                        <span ng-show="predicate == 'tbl_mls_id' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'tbl_mls_id' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'mls_name'; reverse = !reverse">MLS Name
+                                        <span ng-show="predicate == 'mls_name' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'mls_name' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'tester_name'; reverse = !reverse">Tester
+                                        <span ng-show="predicate == 'tester_name' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'tester_name' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'submitted_date'; reverse = !reverse">Submitted Date
+                                        <span ng-show="predicate == 'submitted_date' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'submitted_date' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'tested_date'; reverse = !reverse">Tested&nbsp;&nbsp;&nbsp; Date
+                                        <span ng-show="predicate == 'tested_date' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'tested_date' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'status'; reverse = !reverse">Status
+                                        <span ng-show="predicate == 'status' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'status' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>
+                                        <span href="" ng-click="predicate = 'role'; reverse = !reverse">User Type
+                                        <span ng-show="predicate == 'role' && !reverse" class="fa fa-caret-up"></span>
+                                        <span ng-show="predicate == 'role' && reverse" class="fa fa-caret-down"></span>
+                                    </th>
+                                    <th>&nbsp;&nbsp;&nbsp;Actions&nbsp;&nbsp;&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="data in testdetails | orderBy:predicate:reverse | filter:searchMls">
+                                    <td>{{data.application_uid}}</td>
+                                    <td>{{data.tbl_mls_id}}</td>
+                                    <td>{{data.mls_name}}</td>
+                                    <td>{{data.tester_name}}</td>
+                                    <td>{{data.submitted_date}}</td>
+                                    <td>{{data.tested_date}}</td>
+                                    <td>{{data.status}}</td>
+                                    <td>{{data.role}}</td>
+                                    <td>
+                                        <input type="image" src="general/images/icn_refresh.png" title="Retest">
+                                        <input type="image" src="general/images/icn_view.png" title="View">
+                                        <input type="image" src="general/images/icn_delete.png" title="Delete">                                   
+                                    </td>    
+                                </tr> 
+                            </tbody>
+                        </table>
+                    </div>
+                </article> <!--end of content manager article-->     
+             </div> 
+        </div>    
+    <div class="clear"></div>
+    <br>
+      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+</section>
+<div style="clear:both;"></div>      

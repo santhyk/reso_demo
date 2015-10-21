@@ -1,0 +1,38 @@
+<section id="secondary_bar">
+    <div class="user">
+        <p>{{currentUser.userName | uppercase}} (<a href="#">3 New Requests</a>)</p>
+    </div>
+    <div class="breadcrumbs_container">
+        <article class="breadcrumbs"><a href="#/dashboard">Website Admin</a> <div class="breadcrumb_divider"></div> <a class="current">Dashboard</a></article>
+    </div>
+</section><!-- end of secondary bar -->
+<aside id="sidebar" class="column txt-color-white">
+    <h3 class="txt-color-white">Dashboard</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a href="#/mlsList" class="txt-color-white">MLS List</a></li>
+        <li class="icn_new_article"><a href="#/mls/add" class="txt-color-white">Add MLS</a></li>
+        <li class="icn_test_list"><a href="#/dashboard" class="txt-color-white">Test List</a></li>
+        <li class="icn_new_article"><a href="#/metadata" class="txt-color-white">Create Test</a></li>
+    </ul>
+    <h3 class="txt-color-white">User Manage</h3>
+    <ul class="toggle">
+        <li class="icn_view_users"><a href="#" class="txt-color-white">User List</a></li>
+        <li class="icn_add_user"><a href="#" class="txt-color-white">Add New User</a></li>
+    </ul>
+    <h3 class="txt-color-white">Dictionary</h3>
+    <ul class="toggle">
+        <li class="icn_dictonary_lst"><a href="#" class="txt-color-white">Dictionary List</a></li>
+        <li class="icn_dictionary"><a href="#" class="txt-color-white">RESO Dictionary 1.3</a></li>
+        <li class="icn_dictionary"><a href="#" class="txt-color-white">RESO Dictionary 1.4</a></li>
+        <li class="icn_dictonary_add"><a href="#" class="txt-color-white">Add New Dictionary</a></li>
+    </ul>
+    <h3 class="txt-color-white">Support</h3>
+    <ul class="toggle">
+        <li class="icn_support"><a href="#" class="txt-color-white">Help & Support</a></li>
+    </ul>
+    <h3 class="txt-color-white">Profile</h3>
+    <ul class="toggle">
+        <li class="icn_profile"><a href="#" class="txt-color-white">View Profile</a></li>
+        <li class="icn_jump_back"><a href="#/login" class="txt-color-white" ng-click="ClearCredentials();">Logout</a></li>
+    </ul>
+</aside><!-- end of sidebar -->

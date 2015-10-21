@@ -1,0 +1,120 @@
+<section id="main" class="column">
+    <header>
+        <h3 align="center">ADD MLS</h3>
+    </header>
+    <div class="container">
+        <div class="form_dv" style="max-width:680px;">
+            <form role="form" name = "userForm" ng-submit="submit()" novalidate> 
+                <div class="row">
+                    <div class="col-md-6" style="font-size: 100%;">
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+                            <label>MLS Name*:</label>
+                            <input type="text" name="name" class="form-control" ng-model="user.name" ng-minlength="5" ng-maxlength="20" ng-required ="true" placeholder="MLS Name">
+                            <p ng-show="userForm.name.$error.minlength" class="help-block">MLS Name is too short.</p>
+                            <p ng-show="userForm.name.$error.maxlength" class="help-block">MLS Name is too long.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.website.$invalid && !userForm.website.$pristine }">
+                            <label for="login-url">Website*:</label>
+                            <input type="url" name="website" ng-model="user.website" class="form-control" ng-required ="true" placeholder="Website">
+                            <p ng-show="userForm.website.$invalid && !userForm.website.$pristine" class="help-block">Enter a valid Website.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                            <label>Contact Email*:</label>
+                            <input type="email"  name="email" class="form-control" ng-model="user.email" ng-required ="true" placeholder="Email">
+                            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid Email.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+                            <label for="phone">Contact Number*:</label>
+                            <input type="number" ng-model="user.phone" class="form-control" name="phone" ng-minlength="7" ng-maxlength="10" ng-required ="true" placeholder="Contact Number">
+                            <p ng-show="userForm.phone.$error.minlength" class="help-block">Contact Number is too short.</p>
+                            <p ng-show="userForm.phone.$error.maxlength" class="help-block">Contact Number is too long.</p>
+                            <div role="alert">
+                                <span ng-show="userForm.phone.$error.number" class="help-block">
+                                  Not valid number!</span>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.sai_link.$invalid && !userForm.sai_link.$pristine }">
+                            <label for="phone">SAI Link*:</label>
+                            <input type="url" ng-model="user.sai_link" class="form-control" name="sai_link" ng-required ="true" placeholder="URL">
+                            <p ng-show="userForm.sai_link.$invalid && !userForm.sai_link.$pristine" class="help-block">Enter a valid URL.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.street.$invalid && !userForm.street.$pristine }">
+                            <label for="phone">Street :</label>
+                            <input type="text" ng-model="user.street" class="form-control" name="street" ng-maxlength="20"placeholder="Street Name">
+                            <p ng-show="userForm.street.$error.maxlength" class="help-block">Street Name is too long.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.city.$invalid && !userForm.city.$pristine }">
+                            <label for="phone">City :</label>
+                            <input type="text" ng-model="user.city" class="form-control" name="city" ng-maxlength="20"placeholder="City">
+                            <p ng-show="userForm.city.$error.maxlength" class="help-block">City is too long.</p>
+                        </div>  
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.state.$invalid && !userForm.state.$pristine }">
+                            <label for="phone">State:</label>
+                            <input type="text" ng-model="user.state" class="form-control" name="state" ng-maxlength="15" placeholder="State">
+                            <p ng-show="userForm.state.$error.maxlength" class="help-block">State is too long.</p>
+                        </div> 
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.zipcode.$invalid && !userForm.zipcode.$pristine }">
+                            <label for="phone">Zip:</label>
+                            <input type="number" ng-model="user.zipcode" class="form-control" name="zipcode" ng-minlength="6" ng-maxlength="6" placeholder="Zipcode">
+                            <p ng-show="userForm.zipcode.$error.maxlength" class="help-block">Enter a valid Zipcode</p>
+                            <p ng-show="userForm.zipcode.$error.minlength" class="help-block">Enter a valid Zipcode</p>
+                            <div role="alert">
+                                <span ng-show="userForm.zipcode.$error.number" class="help-block">
+                                  Not valid number!</span>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.date.$invalid && !userForm.date.$pristine }">
+                            <label for="phone">Submitted Date:</label>
+                            <datepicker date-set="{{date}}" date-format="MM/dd/yyyy">
+                                <input type="text" class="form-control" name ="date" ng-model="user.date" ng-pattern='/^[0,1]?\d{1}\/(([0-2]?\d{1})|([3][0,1]{1}))\/(([1]{1}[9]{1}[9]{1}\d{1})|([2-9]{1}\d{3}))$/' required/>
+                                <span class="help-block" ng-show="userForm.date.$error.required">Date Required!</span>
+                                <span class="help-block" ng-show="userForm.date.$error.pattern">Incorrect Format, should be MM/DD/YYYY</span>
+                            </datepicker>
+                        </div> 
+                    </div>
+                    <div class="col-md-6" >
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.login_url.$invalid && !userForm.login_url.$pristine }">
+                            <label for="login-url">Login URL*:</label>
+                            <input type="url" ng-model="user.login_url" class="form-control" name="login_url" ng-required ="true" placeholder="Login URL">
+                            <p ng-show="userForm.login_url.$invalid && !userForm.login_url.$pristine" class="help-block">Enter a valid URL.</p>
+                       </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+                            <label for="username">Username*:</label>
+                            <input type="text" ng-model="user.username" class="form-control" name="username" ng-required ="true" ng-disabled="userForm.login_url.$pristine" placeholder="Username">
+                            <p ng-show="userForm.username.$invalid && !userForm.username.$pristine" class="help-block">Username is required.</p>
+                        </div>
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                            <label for="phone">Password*:</label>
+                            <input type="text" ng-model="user.password" class="form-control" name="password" ng-required ="true" ng-disabled="userForm.login_url.$pristine" placeholder="Password">
+                            <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Enter Password.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">User Agent:</label>
+                            <input type="text" ng-model="user.useragent" class="form-control" name="useragent" ng-disabled="userForm.login_url.$pristine" placeholder="User Agent">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">User Agent Password:</label>
+                            <input type="text" ng-model="user.useragent_password" class="form-control" name="useragent_password" ng-disabled="userForm.login_url.$pristine" placeholder="User Agent password">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">RetsVersion*:</label>
+                            <input type="text" ng-model="user.rets_version" class="form-control" name="rets_version" ng-required ="true" ng-disabled="userForm.login_url.$pristine" placeholder="Rets Version">                        
+                            <p ng-show="userForm.rets_version.$invalid && !userForm.rets_version.$pristine" class="help-block">Enter Rets Version.</p>
+                        </div>  
+                        <div class="form-group">
+                            <label for="phone">PayLoad:</label>
+                            <input type="text" ng-model="user.payload" class="form-control" name="payload" ng-required ="true" ng-disabled="userForm.login_url.$pristine" placeholder="Payload">
+                            <p ng-show="userForm.payload.$invalid && !userForm.payload.$pristine" class="error">Enter PayLoad.</p>
+                        </div>   
+                    </div>
+                </div><br/>
+                <div align="center">
+                <button type="submit" class="btn btn-primary" ng-submit="submit()" ng-disabled="userForm.$invalid">{{action}}</button>
+                <button type="submit" onclick="location.href = '#/dashboard';" class="btn btn-primary" ng-submit="cancel()">Cancel</button>
+                </div>
+           </form>
+        </div>
+    <br/><br/>
+    </div>
+</section>
+<div style="clear:both;"></div>
